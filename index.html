@@ -136,11 +136,12 @@
         /* 微信 */ 
         document.getElementById("wechat-url").src = QRCode.generatePNG(setting.wechatUrl, { margin: 0 });
         document.getElementById("code-wechat").style.display = "block";
-        document.title = "|\uff65\u03c9\uff65\uff40)\u4f60\u770b\u4e0d\u89c1\u6211\u2026\u2026\u4f60\u770b\u4e0d\u89c1\u6211\u2026\u2026\u4f60\u770b\u4e0d\u89c1\u6211\u2026\u2026"
+        document.title = "\u5fae\u4fe1\u6536\u6b3e\u7801"
     } else if(navigator.userAgent.match(/QQ\//i)) {
         /* QQ */ 
         document.getElementById("qq-url").src = QRCode.generatePNG(setting.qqUrl, { margin: 0 });
         document.getElementById("code-qq").style.display = "block";
+        document.title = "\u0051\u0051\u6536\u6b3e\u7801"
     } else {
         /* 其它，显示“万能码” */ 
         document.getElementById("page-url").src = QRCode.generatePNG(window.location.href, { margin: 0 });
