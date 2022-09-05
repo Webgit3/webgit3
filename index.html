@@ -117,6 +117,12 @@
             <img id="wechat-url" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=">
         </div>
         <div class="code-footer">先保存到手机或转发至聊天，再扫描付款</div>
+        <p>由于微信不支持第三方网站扫码，所以无法直接长按二维码扫码</p>
+        <p>此处解决三种办法：</p>
+        <p>1、使用其它设备扫码</p>
+        <p>2、长按二维码保存到手机再使用微信内置扫码器扫码</p>
+        <p>3、长按二维码转发<del>给别人叫别人帮你付</del>至文件传输助手，长按扫码</p>
+        <p>谢谢你</p>
     </div>
     
     <script>
@@ -132,16 +138,17 @@
     if(navigator.userAgent.match(/Alipay/i)) {
         /* 支付宝 */ 
         window.location.href = setting.aliUrl; 
+        document.title = "\u652f\u4ed8\u5c31\u7528\u652f\u4ed8\u5b9d\u007e"
     } else if(navigator.userAgent.match(/MicroMessenger\//i)) {
         /* 微信 */ 
         document.getElementById("wechat-url").src = QRCode.generatePNG(setting.wechatUrl, { margin: 0 });
         document.getElementById("code-wechat").style.display = "block";
-        document.title = "\u5fae\u4fe1\u6536\u6b3e\u7801"
+        document.title = "\u5fae\u4fe1\u652f\u4ed8"
     } else if(navigator.userAgent.match(/QQ\//i)) {
         /* QQ */ 
         document.getElementById("qq-url").src = QRCode.generatePNG(setting.qqUrl, { margin: 0 });
         document.getElementById("code-qq").style.display = "block";
-        document.title = "\u0051\u0051\u6536\u6b3e\u7801"
+        document.title = "\u0051\u0051\u652f\u4ed8"
     } else {
         /* 其它，显示“万能码” */ 
         document.getElementById("page-url").src = QRCode.generatePNG(window.location.href, { margin: 0 });
